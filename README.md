@@ -40,18 +40,18 @@ Replace ``||basic:show number 1||`` with ``||basic: show number Score||``
 
 ## Now repeat for the other goal
 
-Repeat the exercise above for pin 2 so that you have both gates working. 
+Repeat the exercise for pin 2 so that you have both gates working. 
 
 Download the code to the microbit and check that the score is increasing when you connect the cables to pin 2.
 
 You code should look like this:
-
+![Goal setup](goal_setup.png)
 
 ## Alternating sides
 
 To make it more challenging let's require that a different goal is hit each time.
 
-Create a new ``||variable: Side||``. Set it's value to ``||variable: set Side to 1||``
+Create a new variable``||variable: Side||``. Set it's value to ``||variable: set Side to 1||``
 
 Let's draw an arrow to indicate which side needs to be hit first ``||basic:show leds||`` with an arrow pointing right.
 
@@ -71,7 +71,9 @@ Then display an arrow pointing left ``||basic: show leds||``.
 
 ``|Download|`` the code and confirm if it works as expected.
 
-If it does, let's repeat for the other side.
+If it does, let's repeat for the other side. Don't forget to flip the Side numbers!
+
+![Goal with sides](goal_with_sides.png)
 
 ## Adding a time limit
 
@@ -81,7 +83,7 @@ To make it more fair, let's have it start once a button is pressed.
 
 Start with ``||input:on button A pressed||``. You can play a melody to indicate that the game is starting at this point. 
 
-Create a new variable ``||variable: time_left||`` and set it's value ``||variable: time_left to yes||``.
+Create a new variable ``||variable: time_left||`` and set it's value ``||variable: time_left to 1||``.
 
 Add a ``||basic: pause (ms) 120000||``. This will give the players 2minutes to score as high as they can.
 
@@ -89,9 +91,19 @@ Next let's indicate that the game finished and ``||basic: show number Score||``.
 
 You might want to play a sound here!
 
+## Cleaning up
+
+To avoid confusing players, let's move the arrow from ``||basic:on start||`` to after the button A is pressed.
+
+Instead let's show a message to our players that they need to press A. ``||show string Press A!||``
+
+![Full Game](full_game.png)
 
 ## Enjoy the game
 Let's see how high you can score!
 
 Swap the mazes with other students, see if theirs is easier or harder.
+
+![Full Game](full_game_with_bells_and_whistles.png)
+
 
